@@ -1,0 +1,168 @@
+/*CSS stylesheet för mitt memoryspel för modul 4*/
+
+/*Detta är en snabb enkel reset som affekterar alla mina objekt*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*Här har vi koden för Body:n och för klassen memory_game. Om man sätter display: flex och margin: auto på dessa behållare kommer de att centeras både vertikalt och horisontellt.*/
+body {
+    height: 100vh;
+    display: flex;
+    background: #dddddd;
+}
+
+/*Här har vi stilen för klassen memory_game. Genom att lägga till flex-wrap: wrap kan denna behållare följa och böja sig längs flera linjer i enlighet med sin egen storlek. Gör man inte såhär kan/kommer objekten krympa i bredd för att passa i behållaren.*/
+.memory_game1{
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 55px;
+  
+}
+
+.memory_game {
+    width: 800px;
+    height: 800px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    /*Genom att lägga till perspective kan jag få en snygg 3D effekt när jag vänder kortet. Ju lägre värdet är desto mindre effekt.*/
+}
+
+.test{
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    height: 500px;
+    display: block;
+    position: absolute;
+   
+}
+.titleInfo h1, #nrTries{
+    font-size: 45px;
+    padding-top: 1%;
+}
+
+.titleInfo h3{
+    font-size: 20px;
+    padding-bottom: 1%;
+}
+
+.startOver{
+    margin-top: 15px;
+    width: 100px;
+}
+/*Här har vi stilen för själva memory-korten i klassen memory_card. Genom att använda mig av css-funktionen calc() kan jag sätta höjden och bredden på korten och raderna. Målet är att göra 3 rader med 4 kort på varje rad. För att underkategorierna eller barnen till memory_card ska kunna placeras relativt till sin förälder sätter jag postitionen till relative.*/
+
+/*Här är bredden på raderna satt till 25% och höjden är satt till 33.333% - 10px från marginalen. (Taget från hemsidan om memoryspel)*/
+.memory_card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+    transform: scale(1);
+    transform-style: preserve-3d;
+    /*Genom att använda mig av transform-style: preserve 3d; hamnar barnen i samma 3d space som sin förälder. Källa: https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style*/
+    transition: transform .5s;
+    /*Det är denna som gör att kortet faktiskt vänds*/
+    
+}
+
+/*Detta är en pseudo klass som ska triggas varje gång ett av elementen klickas på*/
+.memory_card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
+/*Detta ska göra att mitt kort ska vändas 180 grader*/
+.memory_card.flip {
+    transform: rotateY(180deg);
+}
+
+/*Här har vi stilen för klasserna front_face och back_face. Genom att sätta position: absolute tar jag bort elementen från sin orginalposition ch lägger dem ovanpå varandra.*/
+.front_face,
+.back_face {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    position: absolute;
+    border-radius: 5px;
+    background: #a4cbf6;
+    backface-visibility: hidden;
+}
+
+.front_face {
+    transform: rotateY(180deg);
+    /*Genom att rotera front_face elementet i y-led 180 grader kommer bilden på "andra sidan" att dyka upp*/
+}
+
+/* The Modal (bakgrund)*/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fef0ef; 
+  opacity: 0.83;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+  border-radius: 25px;    
+}
+.modal-content h1 {
+    font-size: 45px;
+    font-family: "Comic Sans MS";
+    color: #383838;
+    text-align: center;
+}
+.modal-content h2{
+    font-size: 24px;
+    text-align: center;
+    font-family: "Comic Sans MS";
+    color: #383838;
+}
+
+/*Spela igen-knappen */
+.playAgain {
+    margin: 0 auto;
+    display: block;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: lightblue;
+}
+
+/* Stän knappen */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
