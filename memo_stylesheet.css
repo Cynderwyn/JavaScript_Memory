@@ -1,20 +1,18 @@
-/*CSS stylesheet för mitt memoryspel för modul 4*/
+/*CSS stylesheet for memory game*/
 
-/*Detta är en snabb enkel reset som affekterar alla mina objekt*/
+/*Quick reset that affects all the objects*/
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-/*Här har vi koden för Body:n och för klassen memory_game. Om man sätter display: flex och margin: auto på dessa behållare kommer de att centeras både vertikalt och horisontellt.*/
 body {
     height: 100vh;
     display: flex;
     background: #dddddd;
 }
 
-/*Här har vi stilen för klassen memory_game. Genom att lägga till flex-wrap: wrap kan denna behållare följa och böja sig längs flera linjer i enlighet med sin egen storlek. Gör man inte såhär kan/kommer objekten krympa i bredd för att passa i behållaren.*/
 .memory_game1{
     width: 100%;
     margin: 0 auto;
@@ -32,7 +30,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     perspective: 1000px;
-    /*Genom att lägga till perspective kan jag få en snygg 3D effekt när jag vänder kortet. Ju lägre värdet är desto mindre effekt.*/
+    /*By adding perspective i can get a 3D effect when the cards are flipped. Lower number = Less effect*/
 }
 
 .test{
@@ -58,9 +56,8 @@ body {
     margin-top: 15px;
     width: 100px;
 }
-/*Här har vi stilen för själva memory-korten i klassen memory_card. Genom att använda mig av css-funktionen calc() kan jag sätta höjden och bredden på korten och raderna. Målet är att göra 3 rader med 4 kort på varje rad. För att underkategorierna eller barnen till memory_card ska kunna placeras relativt till sin förälder sätter jag postitionen till relative.*/
 
-/*Här är bredden på raderna satt till 25% och höjden är satt till 33.333% - 10px från marginalen. (Taget från hemsidan om memoryspel)*/
+/*Here is the style for the memory cards class memory_card. By using the css function calc() I can choose the height and width of the cards and the rows.*/
 .memory_card {
     width: calc(25% - 10px);
     height: calc(33.333% - 10px);
@@ -69,24 +66,19 @@ body {
     box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
     transform: scale(1);
     transform-style: preserve-3d;
-    /*Genom att använda mig av transform-style: preserve 3d; hamnar barnen i samma 3d space som sin förälder. Källa: https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style*/
-    transition: transform .5s;
-    /*Det är denna som gör att kortet faktiskt vänds*/
-    
+    transition: transform .5s;    
 }
 
-/*Detta är en pseudo klass som ska triggas varje gång ett av elementen klickas på*/
+/*This is a pseudo class that should be triggered every time one of the elements is clicked*/
 .memory_card:active {
     transform: scale(0.97);
     transition: transform .2s;
 }
 
-/*Detta ska göra att mitt kort ska vändas 180 grader*/
 .memory_card.flip {
     transform: rotateY(180deg);
 }
 
-/*Här har vi stilen för klasserna front_face och back_face. Genom att sätta position: absolute tar jag bort elementen från sin orginalposition ch lägger dem ovanpå varandra.*/
 .front_face,
 .back_face {
     width: 100%;
@@ -100,10 +92,9 @@ body {
 
 .front_face {
     transform: rotateY(180deg);
-    /*Genom att rotera front_face elementet i y-led 180 grader kommer bilden på "andra sidan" att dyka upp*/
 }
 
-/* The Modal (bakgrund)*/
+/* The Modal*/
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -141,7 +132,7 @@ body {
     color: #383838;
 }
 
-/*Spela igen-knappen */
+/*Play again button */
 .playAgain {
     margin: 0 auto;
     display: block;
@@ -152,7 +143,6 @@ body {
     background-color: lightblue;
 }
 
-/* Stän knappen */
 .close {
   color: #aaaaaa;
   float: right;
