@@ -3,42 +3,28 @@
 
 <head>
     <meta charset="UTF-8">
-
     <title>Memory Game</title>
     <!--Kristina Jeppsson-->
-
-    <link rel="stylesheet" href="memo_stylesheet.css">
-    <!-- <script type="text/javascript" src="memo_javascript.js"></script>-->
-
-    <!--Jag hittade en bild online av baksidan av ett spelkort som jag har använt mig av. Hämtad från källan: https://www.vectorstock.com/royalty-free-vector/poker-playing-card-backside-red-vector-8697409-->
-
-    <!--Alla bilderna på framsidan av korten är gjorda av mig i photoshop-->
-
+    <link rel="stylesheet" href="memo_stylesheet.css">  
+    <!--All images are made by me in photoshop-->
 </head>
 
 <body>
-    <!--style="margin: auto; display: block;"-->
     <div class="test">
         <section class="titleInfo">
             <h1>Kristinas Memory</h1>
             <h3>Välj antal par att spela:</h3>
-
             <form>
                 <input type="radio" checked="true" name="nrPairs" value="6" onclick="numberOfPairs()">6 st &nbsp; &nbsp;
                 <input type="radio" name="nrPairs" value="8" onclick="numberOfPairs()">8 st
                 &nbsp;&nbsp;
                 <input type="radio" name="nrPairs" value="12" onclick="numberOfPairs()">12 st<br>
-
             </form>
-
             <input type="button" class="startOver" value="Börja om" onclick="window.location.reload()">
         </section>
-
-
-        <!--För att göra min grattis du klarade det ruta var jag tvungen att leta upp lite vägledning, vilket jag hittade på denna hemsidan: https://www.w3schools.com/howto/howto_css_modals.asp-->
+        
         <section>
             <div id="myModal" class="modal">
-
                 <!-- Modal content -->
                 <div class="modal-content">
                     <span class="close">&times;</span>
@@ -49,173 +35,122 @@
                     <br /><br />
                     <input type="button" class="playAgain" value="Spela igen?" onclick="window.location.reload()">
                 </div>
-
             </div>
-
         </section>
     </div>
     <!-- index.html -->
     <div class="memory_game1">
         <section class="memory_game">
             <div class="memory_card" data-framework="bike" style="display: none">
-                <!--Genom att lägga till data-framework på de olika elementen kan jag nukomma åt båda kortens dataset-->
+                <!--By adding data framework to the different elements I can now reach both cards datasets-->
                 <img class="front_face" src="Cards/Bike.png" alt="Bike">
-                <!--Bild framsida med cykel-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
-                <!--Baksidan av kortet-->
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
             </div>
-
             <div class="memory_card" data-framework="bike" style="display: none">
                 <img class="front_face" src="Cards/Bike.png" alt="Bike">
-                <!--Bild framsida med cykel-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
-                <!--Baksidan av kortet-->
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
             </div>
             <div class="memory_card" data-framework="bow">
                 <img class="front_face" src="Cards/Bow.png" alt="Bow">
-                <!--Bild framsida med snigel-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
-                <!--Baksidan av kortet-->
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
             </div>
             <div class="memory_card" data-framework="bow">
                 <img class="front_face" src="Cards/Bow.png" alt="Bow">
-                <!--Bild framsida med snigel-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
-                <!--Baksidan av kortet-->
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
             </div>
             <div class="memory_card" data-framework="butterfly">
                 <img class="front_face" src="Cards/Butterfly.png" alt="Butterfly">
-                <!--Bild framsida med fjäril-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
-                <!--Baksidan av kortet-->
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
             </div>
 
             <div class="memory_card" data-framework="butterfly">
                 <img class="front_face" src="Cards/Butterfly.png" alt="Butterfly">
-                <!--Bild framsida med fjäril-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
-                <!--Baksidan av kortet-->
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
             </div>
             <div class="memory_card" data-framework="car">
                 <img class="front_face" src="Cards/Car.png" alt="Car">
-                <!--Bild framsida med snigel-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
-                <!--Baksidan av kortet-->
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
             </div>
             <div class="memory_card" data-framework="car">
                 <img class="front_face" src="Cards/Car.png" alt="Car">
-                <!--Bild framsida med snigel-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
-                <!--Baksidan av kortet-->
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
             </div>
 
             <div class="memory_card" data-framework="fire" style="display: none">
                 <img class="front_face" src="Cards/Fire.png" alt="Fire">
-                <!--Bild framsida med brasa-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
-                <!--Baksidan av kortet-->
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
             </div>
 
             <div class="memory_card" data-framework="fire" style="display: none">
                 <img class="front_face" src="Cards/Fire.png" alt="Fire">
-                <!--Bild framsida med brasa-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
-                <!--Baksidan av kortet-->
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
             </div>
 
             <div class="memory_card" data-framework="flower">
                 <img class="front_face" src="Cards/Flower.png" alt="Flower">
-                <!--Bild framsida med blomma-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
-                <!--Baksidan av kortet-->
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
             </div>
 
             <div class="memory_card" data-framework="flower">
                 <img class="front_face" src="Cards/Flower.png" alt="Flower">
-                <!--Bild framsida med blomma-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
-                <!--Baksidan av kortet-->
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
             </div>
 
             <div class="memory_card" data-framework="phone">
                 <img class="front_face" src="Cards/Phone.png" alt="Phone">
-                <!--Bild framsida med telefon-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
-                <!--Baksidan av kortet-->
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
             </div>
 
             <div class="memory_card" data-framework="phone">
                 <img class="front_face" src="Cards/Phone.png" alt="Phone">
-                <!--Bild framsida med telefon-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
-                <!--Baksidan av kortet-->
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
             </div>
             <div class="memory_card" data-framework="pin" style="display: none">
                 <img class="front_face" src="Cards/Pin.png" alt="Pin">
-                <!--Bild framsida med snigel-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
-                <!--Baksidan av kortet-->
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
             </div>
             <div class="memory_card" data-framework="pin" style="display: none">
                 <img class="front_face" src="Cards/Pin.png" alt="Pin">
-                <!--Bild framsida med snigel-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
-                <!--Baksidan av kortet-->
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
             </div>
             <div class="memory_card" data-framework="puzzle" style="display: none">
                 <img class="front_face" src="Cards/Puzzel.png" alt="Puzzle">
                 <!--Bild framsida med snigel-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
                 <!--Baksidan av kortet-->
             </div>
             <div class="memory_card" data-framework="puzzle" style="display: none">
                 <img class="front_face" src="Cards/Puzzel.png" alt="Puzzle">
-                <!--Bild framsida med snigel-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
-                <!--Baksidan av kortet-->
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
             </div>
             <div class="memory_card" data-framework="snail">
                 <img class="front_face" src="Cards/Snail.png" alt="Snail">
-                <!--Bild framsida med snigel-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
-                <!--Baksidan av kortet-->
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
             </div>
 
             <div class="memory_card" data-framework="snail">
                 <img class="front_face" src="Cards/Snail.png" alt="Snail">
-                <!--Bild framsida med snigel-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
-                <!--Baksidan av kortet-->
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
             </div>
             <div class="memory_card" data-framework="snowflake" style="display: none">
                 <img class="front_face" src="Cards/Snowflake.png" alt="Snowflake">
-                <!--Bild framsida med snigel-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
-                <!--Baksidan av kortet-->
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
             </div>
             <div class="memory_card" data-framework="snowflake" style="display: none">
                 <img class="front_face" src="Cards/Snowflake.png" alt="Snowflake">
-                <!--Bild framsida med snigel-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
-                <!--Baksidan av kortet-->
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
             </div>
             <div class="memory_card" data-framework="umbrella" style="display: none">
                 <img class="front_face" src="Cards/Umbrella.png" alt="Umbrella">
-                <!--Bild framsida med snigel-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
-                <!--Baksidan av kortet-->
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
             </div>
             <div class="memory_card" data-framework="umbrella" style="display: none">
                 <img class="front_face" src="Cards/Umbrella.png" alt="Umbrella">
-                <!--Bild framsida med snigel-->
-                <img class="back_face" src="Cards/backside.jpg" alt="Memory Card">
-                <!--Baksidan av kortet-->
+                <img class="back_face" src="Cards/Backside.png" alt="Memory Card">
             </div>
 
         </section>
     </div>
-
-
     <script type="text/javascript" src="memo_javascript.js"></script>
 </body>
 
